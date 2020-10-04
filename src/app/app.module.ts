@@ -11,13 +11,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { PoTemplatesModule } from '@po-ui/ng-templates';
 import { PoWidgetModule, PoFieldModule, PoPageModule } from '@po-ui/ng-components';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DetailsComponent } from './pokemons/details/details.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PokemonsComponent,
-    CardComponent
+    CardComponent,
+    DetailsComponent
   ],
   imports: [
     CommonModule,

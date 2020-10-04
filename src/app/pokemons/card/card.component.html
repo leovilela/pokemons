@@ -1,6 +1,12 @@
-<po-widget
-  [p-title]="properties.name"
-  [p-secondary-label]="properties.types"
-  p-size="po-sm-12"
->
-</po-widget>
+<div class="po-sm-12">
+    <span>{{id}}: Nome:</span>
+    <h2> {{name}}</h2>
+    <img src='{{image}}'>
+    <div *ngIf="types">
+        <span>Tipos:</span>
+        <ul>
+            <li *ngFor="let type of types">{{type}}</li>
+        </ul>
+    </div>
+    
+</div>
