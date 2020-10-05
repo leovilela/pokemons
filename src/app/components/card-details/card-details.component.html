@@ -1,20 +1,26 @@
 <div class="po-sm-12">
     <p class="id">{{id}}</p>
     <p class="name">Nome: {{name}}</p>
+</div>
+<div class=" po-md-6 po-sm-12">
     <img src='{{imageUrlHiRes}}'>
-    <div *ngIf="types" class="types">
-        <span>Tipos:</span>
-        <ul>
-            <li *ngFor="let type of types">{{type}}</li>
-        </ul>
+</div>
+<div class=" po-md-6 po-sm-12">
+    <div *ngIf="types" class="table">
+        <table border="1">
+            <tr>
+                <th>Tipos</th>                                
+            </tr>
+            <tr *ngFor="let type of types"><td>{{type}}</td></tr>
+        </table>
         
     </div>
     <div *ngIf="attacks" class="table">
-        <span>Ataques:</span>
+        
         <table border="1">
             <tr>
                 <th>Custo de "mana"</th>
-                <th>Nome</th>
+                <th>Nome do ataque</th>
                 <th>Dano</th>
                 <th>Desrição</th>
             </tr>
@@ -22,26 +28,27 @@
         </table>        
     </div>
     <div *ngIf="weaknesses" class="table">
-        <span>Fraquezas:</span>
+        
         <table border="1">
             <tr>
-                <th>Tipo</th>
+                <th>Tipo fraqueza</th>
                 <th>Valor</th>                
             </tr>
             <tr *ngFor="let weaknesse of weaknesses"><td>{{weaknesse.type}}</td><td>{{weaknesse.value}}</td></tr>
         </table>        
     </div>
     <div *ngIf="resistances" class="table">
-        <span>Resistências:</span>
+
         <table border="1">
             <tr>
-                <th>Tipo</th>
+                <th>Tipo resistência</th>
                 <th>Valor</th>                
             </tr>
             <tr *ngFor="let resistance of resistances"><td>{{resistance.type}}</td><td>{{resistance.value}}</td></tr>
         </table>        
     </div>
-    <a href="/" class="button">Voltar</a>
-    
-    
 </div>
+<div class="po-sm-12" class="buttonCenter">
+    <a href="/" class="button">Voltar</a>
+</div>
+

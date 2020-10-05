@@ -1,14 +1,23 @@
 <div class="po-sm-12">
-    <h1 *ngIf = "cardDetails"> entrou </h1>
-    <span>{{id}}: Nome:</span>
-    <h2> {{name}}</h2>
-    <img src='{{image}}'>
-    <div *ngIf="types">
-        <span>Tipos:</span>
-        <ul>
-            <li *ngFor="let type of types">{{type}}</li>
-        </ul>
-        <a href="card/details/{{id}}">Detalhe</a>
-    </div>
-    
+    <p class="id">{{id}}</p>
+    <p class="name">Nome: {{name}}</p>
 </div>
+<div class=" po-md-6 po-sm-12">
+    <img src='{{image}}'>
+</div>
+<div class=" po-md-6 po-sm-12">
+    <div *ngIf="types" class="table">
+        <table border="1">
+            <tr>
+                <th>Tipos</th>                                
+            </tr>
+            <tr *ngFor="let type of types"><td>{{type}}</td></tr>
+        </table>
+        
+    </div>
+</div>
+<div class="po-sm-12" class="buttonCenter">
+    <a href="card/details/{{id}}" class="button">Detalhe</a>
+</div>
+
+
