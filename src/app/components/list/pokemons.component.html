@@ -1,13 +1,13 @@
 <po-page-default p-title="Pokemons">
     <div class="po-row">
-      <div class="po-xl-6 po-lg-6 po-md-6 po-sm-6">
+      <div class="po-xl-6 po-lg-6 po-md-6 po-sm-12">
         <po-input p-label="Busca" [formControl]="pokemonInput"></po-input>
       </div>
     </div>
   
     <div class="td-page-wrapper" *ngIf="cards$ | async as cards; else elseBlock">
       <div class="po-row">
-        <div class="po-md-4 po-sm-12" *ngFor="let card of cards">
+        <div class="po-xl-3 po-lg-4 po-md-6 po-sm-12" *ngFor="let card of cards">
           <app-card [properties]="card"></app-card>
         </div>
       </div>

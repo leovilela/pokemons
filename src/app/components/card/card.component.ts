@@ -12,6 +12,7 @@ export class CardComponent implements OnInit {
   id: string;
   name: string;
   image: string;
+  imageUrlHiRes: string;
   types: Array<Types>;
   
   constructor() {}
@@ -21,7 +22,7 @@ export class CardComponent implements OnInit {
     this.types = this.properties.types;
     this.name = this.properties.name;
     this.image = this.properties.imageUrl;
-
+    this.imageUrlHiRes = this.properties.imageUrlHiRes;
   }
 }
 

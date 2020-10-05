@@ -2,7 +2,7 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { merge } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, switchMap, tap } from 'rxjs/operators';
-import { PokemonsService } from '../pokemons.service';
+import { PokemonsService } from 'src/app/service/pokemons.service'
 const ESPERA_DIGITACAO = 300;
 @Component({
   selector: 'app-pokemons',
