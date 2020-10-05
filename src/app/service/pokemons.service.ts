@@ -15,10 +15,7 @@ export class PokemonsService {
     const params = valor ? new HttpParams().append('name', valor) : undefined;
     return this.httpClient.get<CardsAPI>('https://api.pokemontcg.io/v1/cards', { params })
       .pipe(
-        tap((valor)=> console.log({valor})),
-        // map((api)=>api.payload), ou pluck
         pluck('cards'),
-        tap((valor)=> console.log("novo valor", valor)),
         map((card) => card.sort((cardA, cardB) => this.ordenaPorCodigo(cardA, cardB))
       )
   )}
@@ -28,9 +25,7 @@ export class PokemonsService {
     const params = id ? new HttpParams().append('id', id) : undefined;
     return this.httpClient.get<CardsAPI>('https://api.pokemontcg.io/v1/cards', { params })
       .pipe(
-        tap((valor)=> console.log(id)),
-        pluck('cards'),
-        tap((id)=> console.log("novo valor", id))
+        pluck('cards')
   )}
 
   private ordenaPorCodigo(cardA: Card, cardB: Card){

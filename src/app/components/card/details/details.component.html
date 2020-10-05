@@ -1,6 +1,6 @@
 <div class="td-page-wrapper" *ngIf="cards$ | async as cards; else elseBlock">
     <div class="po-row">
-      <div class="po-xl-8 po-lg-10 po-md-12 po-sm-12" *ngFor="let card of cards">
+      <div class="po-sm-12" *ngFor="let card of cards">
         <app-card-details [properties]="card"></app-card-details>
       </div>
     </div>

@@ -13,26 +13,17 @@ const ESPERA_DIGITACAO = 300;
 export class PokemonsComponent implements OnInit {
 
   pokemonInput = new FormControl();
-  todasAcoes$ = this.pokemonsService.getCartas().pipe(
-    tap(() => {
-      console.log('Fluxo Inicial');
-    })
-  );
+  todasCards$ = this.pokemonsService.getCartas();
   filtroPeloInput$ = this.pokemonInput.valueChanges.pipe(
     debounceTime(ESPERA_DIGITACAO),
-    tap(() => {
-      console.log('Fluxo do Filtro');
-    }),
-    tap(console.log),
     filter(
       (valorDigitado) => valorDigitado.length >= 3 || !valorDigitado.length
     ),
     distinctUntilChanged(),
-    switchMap((valorDigitado) => this.pokemonsService.getCartas(valorDigitado)),
-    tap(console.log)
+    switchMap((valorDigitado) => this.pokemonsService.getCartas(valorDigitado))
   );
 
-  cards$ = merge(this.todasAcoes$, this.filtroPeloInput$);
+  cards$ = merge(this.todasCards$, this.filtroPeloInput$);
 
   constructor(private pokemonsService: PokemonsService) {}
 
