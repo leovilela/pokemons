@@ -1,0 +1,54 @@
+<div class="po-sm-12">
+    <p class="id">{{id}}</p>
+    <p class="name">Nome: {{name}}</p>
+</div>
+<div class="po-xl-3 po-lg-3  po-md-4 po-sm-12">
+    <img src='{{imageUrlHiRes}}'>
+</div>
+<div class="po-xl-9 po-lg-9  po-md-8 po-sm-12">
+    <div *ngIf="types" class="table">
+        <table border="1">
+            <tr>
+                <th>Tipos</th>                                
+            </tr>
+            <tr *ngFor="let type of types"><td>{{type}}</td></tr>
+        </table>
+        
+    </div>
+    <div *ngIf="attacks" class="table">
+        
+        <table border="1">
+            <tr>
+                <th>Custo de "mana"</th>
+                <th>Nome do ataque</th>
+                <th>Dano</th>
+                <th>Desrição</th>
+            </tr>
+            <tr *ngFor="let attack of attacks"><td>{{attack.cost}}</td><td>{{attack.name}}</td><td>{{attack.damage}}</td><td>{{attack.text}}</td></tr>
+        </table>        
+    </div>
+    <div *ngIf="weaknesses" class="table">
+        
+        <table border="1">
+            <tr>
+                <th>Tipo fraqueza</th>
+                <th>Valor</th>                
+            </tr>
+            <tr *ngFor="let weaknesse of weaknesses"><td>{{weaknesse.type}}</td><td>{{weaknesse.value}}</td></tr>
+        </table>        
+    </div>
+    <div *ngIf="resistances" class="table">
+
+        <table border="1">
+            <tr>
+                <th>Tipo resistência</th>
+                <th>Valor</th>                
+            </tr>
+            <tr *ngFor="let resistance of resistances"><td>{{resistance.type}}</td><td>{{resistance.value}}</td></tr>
+        </table>        
+    </div>
+</div>
+<div class="po-sm-12" class="buttonCenter">
+    <a href="/" class="button">Voltar</a>
+</div>
+

@@ -1,7 +1,9 @@
 export interface Cards extends Array<Card> {
 }
 export interface Card{
-    id: number;
+    id: string;
+    imageUrl: string;
+    imageUrlHiRes: string;
     name: string;
     types: Array<Types>;
     attacks: Array<Attacks>;
